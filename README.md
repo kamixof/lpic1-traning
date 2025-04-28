@@ -126,5 +126,29 @@ Exercise 6: Write a program that take a backup from home directory of your user 
 time user logged out.
 
 
+############################################################################################################
+Exercise 7: Write a program that reads, pings one by one from within a file containing the list
+of destination IPs, and saves the result in a log file on the same day with the hostname of
+that machine.
+
+
+#!/bin/bash
+
+
+
+
+while read -r line; do
+
+
+        ping -c 1 -W 3 ${line} >> file2.txt
+        if [ $? -eq 0 ]; then
+                echo "Server with ip ${line} is REACHABLE"
+        else
+                echo "Server with ip ${line} is NOT REACHABLE!!!!"
+        fi
+done < file1.txt
+
+###############################################################################################################
+
 
 
