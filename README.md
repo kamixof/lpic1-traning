@@ -122,13 +122,14 @@ fi
 
 echo "Successfully saved to $output_file and cleaned up old files"
 exit 0
-```bash
+```
 ############################################################################################################
-
 Exercise 6: Write a program that take a backup from home directory of your user after each
 time user logged out.
+```bash
+#!/bin/bash
 
-
+```
 ############################################################################################################
 Exercise 7: Write a program that reads, pings one by one from within a file containing the list
 of destination IPs, and saves the result in a log file on the same day with the hostname of
@@ -150,7 +151,7 @@ while read -r line; do
                 echo "Server with ip ${line} is NOT REACHABLE!!!!"
         fi
 done < file1.txt
-```bash
+```
 ###############################################################################################################
 
 
