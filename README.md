@@ -2,7 +2,7 @@
 
 Exercise 1: Write a program that takes a number from the input, compares it to 10, and
 returns a message for each of the 3 modes (larger, equal, and smaller).
-
+```bash
 #!/bin/bash
 while [[ -z ${INT} || ! ${INT} =~ ^-?[0-9]+$ ]]
 do
@@ -17,11 +17,11 @@ then
 else
     echo "${INT} is equal to 10"
 fi
-
+```
 #######################################################################################################
 Exercise 2: Write a program that takes 20 numbers from the input, compares them, and
 states which number is the largest and smallest.
-
+```bash
 
 #!/bin/bash
 
@@ -46,11 +46,12 @@ for ((i=1; i<=20; i++)); do
 done
 
 echo "The smallest number entered is ${smallest} and the largest number entered is ${largest}"
+```
 #########################################################################################################
 Exercise 3: Write a program that has the IP of a server and its User/Pass in front of the Script
 name and if it is pingable, sends its /etc/passwd file to /home/user path of that server,
 otherwise a message displayed that the server is not accessible.
-
+```bash
 #!/bin/bash
 server_ip="$1"
 username="$2"
@@ -72,9 +73,10 @@ else
         echo " server is NOT REACHABLE "
 
 fi
+```
 ############################################################################################################
 Exercise 4: Write a program that prints from 5 to 50 on the screen.
-
+```bash
 
 
 #!/bin/bash
@@ -85,11 +87,12 @@ for (( i=5; i<=50; i++ )); do
 
 
 done
+```
 ##############################################################################################################
 
 Exercise 5: Write a program that saves the first and third fields of the /etc/passwd file every
 day in a file with the same date and does not hold it for more than two days.
-
+```bash
 
 #!/bin/bash
 
@@ -119,7 +122,7 @@ fi
 
 echo "Successfully saved to $output_file and cleaned up old files"
 exit 0
-
+```bash
 ############################################################################################################
 
 Exercise 6: Write a program that take a backup from home directory of your user after each
@@ -130,7 +133,7 @@ time user logged out.
 Exercise 7: Write a program that reads, pings one by one from within a file containing the list
 of destination IPs, and saves the result in a log file on the same day with the hostname of
 that machine.
-
+```bash
 
 #!/bin/bash
 
@@ -147,7 +150,7 @@ while read -r line; do
                 echo "Server with ip ${line} is NOT REACHABLE!!!!"
         fi
 done < file1.txt
-
+```bash
 ###############################################################################################################
 
 
