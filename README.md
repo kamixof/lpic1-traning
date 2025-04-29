@@ -18,7 +18,7 @@ else
     echo "${INT} is equal to 10"
 fi
 ```
-#######################################################################################################
+
 Exercise 2: Write a program that takes 20 numbers from the input, compares them, and
 states which number is the largest and smallest.
 ```bash
@@ -47,7 +47,7 @@ done
 
 echo "The smallest number entered is ${smallest} and the largest number entered is ${largest}"
 ```
-#########################################################################################################
+
 Exercise 3: Write a program that has the IP of a server and its User/Pass in front of the Script
 name and if it is pingable, sends its /etc/passwd file to /home/user path of that server,
 otherwise a message displayed that the server is not accessible.
@@ -74,7 +74,7 @@ else
 
 fi
 ```
-############################################################################################################
+
 Exercise 4: Write a program that prints from 5 to 50 on the screen.
 ```bash
 
@@ -88,7 +88,7 @@ for (( i=5; i<=50; i++ )); do
 
 done
 ```
-##############################################################################################################
+
 
 Exercise 5: Write a program that saves the first and third fields of the /etc/passwd file every
 day in a file with the same date and does not hold it for more than two days.
@@ -123,14 +123,26 @@ fi
 echo "Successfully saved to $output_file and cleaned up old files"
 exit 0
 ```
-############################################################################################################
+
 Exercise 6: Write a program that take a backup from home directory of your user after each
 time user logged out.
 ```bash
 #!/bin/bash
 
+
+HOME_DIR=~
+BACKUP_DIR="/backup"
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+BACKUP_FILE="$BACKUP_DIR/home_backup_$TIMESTAMP.tar.gz"
+
+
+tar -cJf $BACKUP_FILE $HOME_DIR
+
+
+find $BACKUP_DIR -type f -name "home_backup_*.tar.gz" -mtime +7 -exec rm {} \;
+
 ```
-############################################################################################################
+
 Exercise 7: Write a program that reads, pings one by one from within a file containing the list
 of destination IPs, and saves the result in a log file on the same day with the hostname of
 that machine.
@@ -152,7 +164,7 @@ while read -r line; do
         fi
 done < file1.txt
 ```
-###############################################################################################################
+
 
 
 
